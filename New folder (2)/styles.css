@@ -1,0 +1,41 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 20px;
+}
+
+#joinBtn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.latest-posts {
+    padding: 20px;
+}
+
+#postsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#postsList li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}

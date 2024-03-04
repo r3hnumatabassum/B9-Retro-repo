@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReTro Forum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ReTro Forum</h1>
+    </header>
+    <section class="welcome-section">
+        <p>Welcome to the ReTro Forum</p>
+        <p>Let's Discuss</p>
+        <button id="joinBtn">Join Our Forum</button>
+    </section>
+    <section class="latest-posts">
+        <h2>Latest Posts</h2>
+        <ul id="postsList">
+            <!-- Posts will be dynamically added here -->
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+
+
+
+    // Assuming you have a separate API endpoint to fetch posts
+// Replace this with your actual API call
+function fetchPosts() {
+    return new Promise((resolve, reject) => {
+        // Simulate API call with a delay
+        setTimeout(() => {
+            const posts = [
+                { title: "Post 1", content: "This is the content of post 1." },
+                { title: "Post 2", content: "This is the content of post 2." },
+                // ... more posts
+            ];
+            resolve(posts);
+        }, 1000); // Simulate a 1-second delay
+    });
+}
+
+function displayPosts(posts) {
+    const postsList = document.getElementById('posts-list');
+    posts.forEach(post => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
+        postsList.appendChild(listItem);
+    });
+}
+
+async function main() {
+    try {
+        const posts = await fetchPosts();
+        displayPosts(posts);
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        // Handle the error here, e.g., display an error message to the user
+    }
+}
+
+main();
+
+// Handle button click event (optional)
+const joinButton = document.getElementById('join-button');
+joinButton.addEventListener('click', () => {
+    // Navigate to your forum registration or login page
+    window.location.href = 'https://your-forum-website.com/join'; // Replace with your actual URL
+});
+
+    
+
+
+
+
+
+</body>
+</html>
